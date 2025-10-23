@@ -1,0 +1,54 @@
+=========================
+v0.0.1-alpha.0 log
+=========================
+
+What is pysapi?
+---------------
+
+pysapi (Py Static API) is a little experiment to see if you can make APIs using Python, but host them as static files—no servers, no bills, just pure code you can run in your browser. If you’ve ever wanted to just test an API idea or teach yourself how APIs work, without all the backend setup, this is for you.
+
+This log is a simple scratchbook of everything tried so far, with honest notes and gentle reminders that building new things is supposed to be playful.
+
+Experiment: Minimal Modular Routing with Pyodide
+------------------------------------------------
+
+Goal:
+~~~~~
+To see if you can load only the Python code needed for each API route, using Pyodide (Python-in-WASM), and keep everything else as small and static as possible.
+
+Setup:
+~~~~~~
+- Two Python files:
+    - ``bla.py`` returns ``2+2 = 4``.
+    - ``blabla.py`` returns ``This is blabla route.``
+- A JavaScript router (``router.js``) that:
+    - Checks the current route (using query param for static hosting: ``?route=bla`` or ``?route=blabla``).
+    - Loads only the needed Python file.
+    - Runs the Python code in Pyodide.
+    - Shows the result in the browser.
+
+Why query params? Because static servers like ``python3 -m http.server`` don’t support routing—so this is a workaround.
+
+Results:
+~~~~~~~~
+- Visiting ``index.html?route=bla`` shows ``2+2 = 4``.
+- Visiting ``index.html?route=blabla`` shows ``This is blabla route``.
+- Only the code for the requested route is loaded.
+- Can return pretty JSON too (with ``json.dumps`` in Python and ``JSON.parse`` in JS).
+
+Learnings:
+~~~~~~~~~~
+- Modular static APIs are possible with just a tiny router and WASM Python.
+- Even alpha experiments are valuable if they prove the idea (don’t wait for “perfect”).
+- Static hosting means you don’t need a backend server at all.
+- Next step: Make it handle fetch/XHR requests for real API use.
+
+Notes:
+~~~~~~
+- This is v0.0.1-alpha.0, so things are rough, but it works.
+- Everything documented here is to help anyone else pick up the project, or just learn from the experiments.
+- If you want to try, just clone the repo, open ``index.html`` with the right query param, and see what happens.
+
+Gentle reminder:
+~~~~~~~~~~~~~~~~
+No pressure, no need for fancy setup—just play, experiment, and see what you learn. APIs can be simple and fun!

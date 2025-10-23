@@ -20,4 +20,4 @@ This scrapebook is where I log all my experiments, notes, and thoughts as I figu
 .. toctree::
    :maxdepth: 2
 
-   v0.0.1-alpha
+   v0.0.1-alpha.0

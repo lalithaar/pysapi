@@ -16,7 +16,7 @@ This is an early-stage experiment. It works, but it's rough around the edges. Bu
 - If this sounds like something you would be interested in, please star the repo :>
 - If you have any ideas on how we can make this happen, reply in the discussion tab to discuss
 - Intelligence belongs to all of us. If you think of a better way to spin this up, feel free to do so - I just ask you to take care of yourself in return, you don't have to attribute me.
-- If you want to look up other ideas in my scratchbook, checkout my ideabank [scrapebook](https://github.com/lalithaar/ideabank) - list of ideas I thought of, free for anyone to use and implement from
+- If you want to look up other ideas in my scratchbook, checkout my [ideabank](https://github.com/lalithaar/ideabank) - list of ideas I thought of, free for anyone to use and implement from
 
 
 
